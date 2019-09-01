@@ -25,7 +25,7 @@ void keyPressed()
   if (keyCode == LEFT) vFnow = 2;
   if (keyCode == RIGHT) vFnow = 3; 
 
-  switch (vCnow)
+  switch(vCnow)
   { case 0: vC1 = color(0, 50, 170); vC2 = color(15, 155, 255); vC3 = color(255, 255, 255); break;
     case 1: vC1 = color(105, 0, 0); vC2 = color(255, 150, 0); vC3 = color(255, 255, 255); break;
     case 2: vC1 = color(40, 65, 0); vC2 = color(165, 215, 0); vC3 = color(255, 255, 255); break;
@@ -63,7 +63,7 @@ void filterRight()
 ////////////////////////////////////////////
 void vFilter()
 {
-  switch (vFnow)
+  switch(vFnow)
   { case 0: filterUp(); break;
     case 1: filterDown(); break;
     case 2: filterLeft(); break;
@@ -83,13 +83,13 @@ void vDraw()
     for (int y = y1; y <= y2; y++)
     for (int x = x1; x <= x2; x++)
     { r = dist(xx, yy, x, y); 
-      if (r < mD) value[y][x] = constrain(value[y][x] + 3.75 * hermit ((float)(mD - r) / mD), vMin, vMax);
+      if (r < mD) value[y][x] = constrain(value[y][x] + 3.75 * hermit((float)(mD - r) / mD), vMin, vMax);
     }  
   }
   for (int y = 0; y < yD; y++)
   for (int x = 0; x < xD; x++)
-  { r = value[y][x] = max (value[y][x] * 0.97 - 0.001, vMin);
-    fill(lerpColor(vC1, vC2, (r - vMin) / vDelta));
+  { r = value[y][x] = max(value[y][x] * 0.97 - 0.001, vMin);
+    fill(lerpColor(vC1, vC2,(r - vMin) / vDelta));
     ellipse(0.5 + 4 + x * 8, 0.5 + 4 + y * 8, r, r);
     if (r > vP) { fill(vC3); ellipse(0.5 + 4 + x * 8, 0.5 + 4 + y * 8, r - 5, r - 5); } 
   }

@@ -17,7 +17,7 @@ class spring_ball
   void repaint(color c, float r)
   {
     strokeWeight(8);
-    stroke(255, 255, 255); noFill(); line (cx, cy, px, py);
+    stroke(255, 255, 255); noFill(); line(cx, cy, px, py);
     float d = 2 * dist(px, py, cx, cy);
     strokeWeight(1.5); ellipse(cx, cy, d, d);
     noStroke(); fill(255); ellipse(cx, cy, 25, 25); ellipse(px, py, r, r);

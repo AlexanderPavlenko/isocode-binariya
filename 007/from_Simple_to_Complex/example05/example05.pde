@@ -1,4 +1,4 @@
-/////////////////////////////////////////////// все о шариках
+/////////////////////////////////////////////// всё о шариках
 int count = 100;
 
 class c_circ
@@ -42,8 +42,8 @@ void draw()
 }
 
 /////////////////////////////////////////////// вспомогательные функции
-int irandom(int m) { return (int)(random(m) + 0.5); }
-int irandom(int mn, int mx) { return (int)(random(mn, mx) + 0.5); }
+int irandom(int m) { return (int)random(m + 1.0); }
+int irandom(int mn, int mx) { return (int)random(mn, mx + 1.0); }
 int zrandom() { return 1 - 2 * irandom(1); }
 
 void circle(float x, float y, float r, color c) { fill(c); ellipse(x, y, r * 2, r * 2); }

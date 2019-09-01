@@ -19,16 +19,16 @@ c_noise ns;
 //////////////////////////////////////////////////////
 void setup()
 { 
-  size(1200, 160); smooth(); frameRate (30); noStroke(); fill(255, 145, 0); 
+  size(1200, 160); smooth(); frameRate(30); noStroke(); fill(255, 145, 0); 
   ns = new c_noise(100);
 }
 
 void draw()
 {   
   background(0, 0, 0); offs += 0.1; 
-  beginShape(); vertex (0, height);
-  for (int x = 0; x <= width; x += 2) vertex (x, height - height * 0.9 * ns.get(x * scale + offs));
-  vertex (width, height); endShape(CLOSE);  
+  beginShape(); vertex(0, height);
+  for (int x = 0; x <= width; x += 2) vertex(x, height - height * 0.9 * ns.get(x * scale + offs));
+  vertex(width, height); endShape(CLOSE);  
 }
 
 

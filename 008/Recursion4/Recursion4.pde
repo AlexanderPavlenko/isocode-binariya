@@ -11,7 +11,7 @@ void setup()
 void draw()
 { 
   fill(0, 0, 0, 25); rect(0, 0, width, height);
-  switch (i = (i + 1) % 3)
+  switch(i = (i + 1) % 3)
   { case 0: c = color(175, 0, 30); break;
     case 1: c = color(0, 110, 210); break;
     case 2: c = color(230, 110, 0); break;

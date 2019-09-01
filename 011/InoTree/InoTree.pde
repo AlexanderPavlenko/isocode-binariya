@@ -24,7 +24,7 @@ class c_noise
 c_noise ns;
 
 ///////////////////////////////////////////////////////////////////////////////////
-void setup() { size(800, 480); frameRate(25); ns = new c_noise(500); }
+void setup() { size(800, 480); frameRate(30); ns = new c_noise(500); }
  
 void draw()
 {
@@ -40,7 +40,7 @@ void draw()
   r = 20; sc *= 1.25;
   for (int i = 0; i < 3; i++) tree(p = ns.rand(0.1, 0.9), level(p), ns.rand(0.4, 0.65), 0.6, 0.3, 0.1, 5);
   r = 9; sc *= 1.5;
-  for (int i = 0; i < 25; i++) tree(p = ns.rand(), level(p), ns.rand(0.1, 0.3), 0.5, 0.3, 0.1, (int)ns.rand(2, 5));
+  for (int i = 0; i < 25; i++) tree(p = ns.rand(), level(p), ns.rand(0.1, 0.3), 0.5, 0.3, 0.1,(int)ns.rand(2, 5));
 }
 
 void keyReleased() { sr = random(500); }
@@ -49,7 +49,7 @@ void mouseReleased()
 { 
   if (dist(width * 0.7, height * 0.35, mouseX, mouseY) < height * 0.25)
   { csw = (csw + 1) % 4;
-    switch (csw)
+    switch(csw)
     { default: c = color(125, 225, 255); return;
       case 1: c = color(255, 100, 75); return;
       case 2: c = color(185, 215, 105); return;

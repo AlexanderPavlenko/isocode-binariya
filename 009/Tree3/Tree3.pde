@@ -31,13 +31,13 @@ void layer_ae(float sz, color c, int g, int d)
 {  
   g = height - g; noStroke(); fill(c); 
   beginShape();
-  vertex (0, height);
-  float t = random (-PI, PI), tt;
+  vertex(0, height);
+  float t = random(-PI, PI), tt;
   for (int x = 0; x <= width; x++)
-  { vertex (x, tt = g + sz * (random (-3, 3) + 4 * sin(t + x * 0.015 / sz)));
-    if (random(1.0) < (0.01 / sz)) {  float r = sz * random(10, 30); ellipse (x, tt + 3 * sz, r, r * 0.66); }  
+  { vertex(x, tt = g + sz * (random(-3, 3) + 4 * sin(t + x * 0.015 / sz)));
+    if (random(1.0) < (0.01 / sz)) {  float r = sz * random(10, 30); ellipse(x, tt + 3 * sz, r, r * 0.66); }  
   }
-  vertex (width, height);
+  vertex(width, height);
   endShape(CLOSE);
   stroke(c);
   float x = random(80 * sz, 240 * sz) / fq;

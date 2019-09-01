@@ -46,7 +46,7 @@ void branchDot(float l,int n)
   l *= f; n -= 1;
   float r = l / 3;
   if ((r > 2) && (n > 0))
-  { strokeWeight(sw * (0.2 + 0.8 * l / ln)); ellipse (0, 0, r, r);
+  { strokeWeight(sw * (0.2 + 0.8 * l / ln)); ellipse(0, 0, r, r);
     pushMatrix(); rotate(c_x);
     translate(0, -l); branchDot(l, n);
     popMatrix();

@@ -25,8 +25,8 @@ void draw()
   float v, x, y, px = 0, py = 0, m, r, r2;
   int i, j, ix, i2;
   background(c); 
-  for (i = 0; i < sz; i++)                                            // расчет взаимного влияния и приближения к общему уровню: 
-  { speed[i] -= k1 * ((v = value[i]) - lev);                          // приближение к уровню
+  for (i = 0; i < sz; i++)                                            // расчет взаимного влияния и "притяжения" к общему уровню: 
+  { speed[i] -= k1 * ((v = value[i]) - lev);                          // "притяжение" к уровню
     for (j = 1; j <= area; j++)                                       // влияние соседей с глубиной просчета - area
      speed[i] += k2 * (value[max(i - j, 0)] + value[min(i + j, sz - 1)] - 2 * v) / j;
   }
@@ -56,7 +56,7 @@ void draw()
     }
     if (push == 0) push = 10;
   }
-  if (push > 0)                                                      // украшательства действия толчка
+  if (push > 0)                                                       // украшательства действия толчка
   { noFill(); stroke(255, 255, 255); strokeWeight(push * 0.5);
     float p = (15 - push) * 1.25;
     p *= p; ellipse(mouseX, mouseY, p, p); push--;

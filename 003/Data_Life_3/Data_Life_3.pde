@@ -1,10 +1,7 @@
-int xs = 15, ys = 60, d = 8;    // тут добавили переменную
-                             
-void setup()                
-{                           
-  size(xs * d + d, ys * d + d); // размер окна теперь сам подстраивается 
-  noStroke(); rectMode(CENTER); frameRate(20);  
-}
+int xs = 15, ys = 60, d = 8;  // тут добавили переменную
+
+void settings() { size(xs * d + d, ys * d + d); }                             
+void setup() { noStroke(); rectMode(CENTER); frameRate(20); }
 
 void draw()                  
 {                            

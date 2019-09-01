@@ -5,7 +5,7 @@ void setup() { size(640, 480); noLoop(); background(0); }
 
 void draw()
 { 
-  switch (i = (i + 1) % 3)
+  switch(i = (i + 1) % 3)
   { case 0: c = color(200, 0, 55); break;
     case 1: c = color(0, 155, 255); break;
     case 2: c = color(255, 135, 0); break;

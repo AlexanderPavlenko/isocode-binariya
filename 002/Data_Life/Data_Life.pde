@@ -1,10 +1,7 @@
 int xs = 50, ys = 50;  
 
-void setup()
-{ 
-  size(xs * 5 + 5, ys * 5 + 5);
-  noStroke(); frameRate(20);
-}
+void settings() { size(xs * 5 + 5, ys * 5 + 5); } // теперь (начиная с версии 3.0), если необходимо задать размер окна с помощью 
+void setup() { noStroke(); frameRate(20); }       // переменных - надо использовать новую, предопределенную функцию settings()
 
 void draw()
 { 
@@ -15,4 +12,3 @@ void draw()
     fill(0, 155, 255); ellipse(5 + x * 5, 5 + y * 5, r, r);
   }
 }                                            
-

@@ -9,9 +9,9 @@ class c_emouse
 {
   float x, y, px, py, dx, dy, react, foff, m;
   boolean sw;
-  c_emouse (float r, float f)
-  { x = random (width * 0.25, width * 0.25);
-    y = random (height * 0.25, height * 0.25);
+  c_emouse(float r, float f)
+  { x = random(width * 0.25, width * 0.25);
+    y = random(height * 0.25, height * 0.25);
     dx = dy = m = 0; react = r; foff = f; sw = true;
   }
   void regenerate()
@@ -67,7 +67,7 @@ float yRotate(float r, float a) { return sl * r * sin(a); }
 
 color getColor(int m)
 { 
-  switch (ic)
+  switch(ic)
   { case 0: return color(175 + m, 0, 30);
     case 1: return color(0, 110 + m, 210 + m);
     case 2: return color(230 + m, 110 + m, 0);

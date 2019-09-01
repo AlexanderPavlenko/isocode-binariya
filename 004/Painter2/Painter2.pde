@@ -14,7 +14,7 @@ void setup()
 /////////////////////////////////////////////////////////////////////////////
 void draw()
 { 
-  fill(0, 0, 0, 3); noStroke(); rect(0, 0, width, height); stroke(75, 0, 0);     
+  fill(0, 0, 0, 5); noStroke(); rect(0, 0, width, height); stroke(75, 0, 0);     
   float r, d = m + 1.75 * dist(px, py, mouseX, mouseY), d2 = d / 2;
   for (int i = 0; i < s; i++)
   { d = d * 0.5 + random(d * 0.75); r = 0.5 + random(d * 0.25);

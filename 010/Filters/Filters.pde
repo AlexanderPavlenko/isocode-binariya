@@ -20,7 +20,7 @@ class c_noise
   float get(float tt, int f) 
   {
     prepare(tt);
-    switch (f)
+    switch(f)
     { case 0: return getSt(tt);
       case 1: return getLi(tt);
       case 2: return getHmLi(tt); 
@@ -38,18 +38,18 @@ class c_noise
 c_noise ns;
 
 //////////////////////////////////////////////////////
-void drawNoise (float lev, float h, float ofs, int f)
+void drawNoise(float lev, float h, float ofs, int f)
 {
   lev *= height;
-  beginShape(); vertex (0, lev);
-  for (int x = 0; x <= width; x += 2) vertex (x, lev - height * h * ns.get(x * scale + ofs, f));
-  vertex (width, lev); endShape(CLOSE);  
+  beginShape(); vertex(0, lev);
+  for (int x = 0; x <= width; x += 2) vertex(x, lev - height * h * ns.get(x * scale + ofs, f));
+  vertex(width, lev); endShape(CLOSE);  
 }
 
 //////////////////////////////////////////////////////
 void setup()
 { 
-  size(1200, 400); smooth(); frameRate (30); noStroke(); 
+  size(1200, 400); smooth(); frameRate(30); noStroke(); 
   ns = new c_noise(100, 0.1, 1.0);
 }
 

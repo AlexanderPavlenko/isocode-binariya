@@ -12,7 +12,7 @@ void setup()
 void draw()
 { 
   if (mousePressed)
-  { fill(0, 0, 0, 3); noStroke(); rect(0, 0, width, height); stroke(75, 0, 0); // так стираем экран, совсем немного      
+  { fill(0, 0, 0, 5); noStroke(); rect(0, 0, width, height); stroke(75, 0, 0); // так стираем экран, по чу-чуть, постепенно      
     float r, d = m + 1.5 * dist(pmouseX, pmouseY, mouseX, mouseY);
     d = d * 0.5 + random(d * 0.75);
     r = 0.05 + random(d * 0.2);

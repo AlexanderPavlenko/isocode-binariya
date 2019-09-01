@@ -23,7 +23,7 @@ class c_noise
 c_noise ns;
 
 ///////////////////////////////////////////////////////////////////////////////////
-void setup() { size(640, 480); frameRate(25); ns = new c_noise(500); }
+void setup() { size(640, 480); frameRate(30); ns = new c_noise(500); }
 
 void draw()
 {
@@ -32,12 +32,12 @@ void draw()
   background(cb); 
   noStroke(); fill(c); ellipse(width * 0.7, height * 0.35, height * 0.5, height * 0.5);
   ns.startRandom(sr);
-  wind(-0.1, 0.1, 0.975);
+  wind(-0.025, 0.1, 0.975);
   fill(cf); ground(0.1, 0.025);
   stroke(cf); tree(0.45, getGround(0.45), 0.9, 0.9, 0.3, 0.1, 11);
   float p, pw = w;
   w *= 1.25; for (int i = 0; i < 3; i++) tree(p = ns.getRandom(0.1, 0.9), getGround(p), ns.getRandom(0.35, 0.6), 0.7, 0.3, 0.1, 6);
-  w *= 1.25; for (int i = 0; i < 25; i++) tree(p = ns.getRandom(), getGround(p), ns.getRandom(0.1, 0.3), 0.4, 0.3, 0.1, (int)ns.getRandom(2, 4));
+  w *= 1.25; for (int i = 0; i < 25; i++) tree(p = ns.getRandom(), getGround(p), ns.getRandom(0.1, 0.3), 0.4, 0.3, 0.1,(int)ns.getRandom(2, 4));
   w = pw;
 }
 
@@ -61,7 +61,7 @@ void ground(float l, float h)
   gl = l; gh = h;
   beginShape();
   vertex(0, height);
-  for (int x = 0; x <= width; x += 1) vertex (x, height * (1 - getGround((float)x / width)) - random (0.0, 0.5 + 20 * abs(w)));
+  for (int x = 0; x <= width; x += 1) vertex(x, height * (1 - getGround((float)x / width)) - random(0.0, 0.5 + 20 * abs(w)));
   vertex(width, height);
   endShape(CLOSE);
 }
